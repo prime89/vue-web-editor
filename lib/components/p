@@ -1,0 +1,26 @@
+define(['vue', 'lib/component'], function(Vue, parent) {
+    "use strict";
+
+var component = {
+    name: 'i-paragraph',
+    mixins: [parent],
+    template: '<p v-comp v-on:dragstart="dragstart" draggable="true" contentEditable="true">xx{{name}}</p>',
+    dragImage: '<div>p</div>',
+    data: function() {
+        return {
+            isEditable: true,
+            setting: {
+                delete: function() {
+
+                },
+            },
+            panel: {
+
+            }
+        };
+    }
+}
+
+Vue.component(component.name, component);
+return component;
+});
